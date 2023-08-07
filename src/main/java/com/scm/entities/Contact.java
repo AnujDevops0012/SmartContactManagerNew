@@ -19,16 +19,17 @@ public class Contact {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int cId;
+	private int id;
 	private String name;
-	private String secondname;
+	private String secondName;
 	private String  work;
 	private String email;
 	private String image;
 	@Column(length = 500)
 	private String description;
 	private String phone;
-	
+
+	private  String profileImage;
 	@ManyToOne
 	private User user;
 	
@@ -36,11 +37,11 @@ public class Contact {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public int getcId() {
-		return cId;
+	public int getId() {
+		return id;
 	}
-	public void setcId(int cId) {
-		this.cId = cId;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -48,11 +49,11 @@ public class Contact {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSecondname() {
-		return secondname;
+	public String getSecondName() {
+		return secondName;
 	}
-	public void setSecondname(String secondname) {
-		this.secondname = secondname;
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
 	}
 	public String getWork() {
 		return work;
@@ -90,6 +91,28 @@ public class Contact {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
+
+	public String getProfileImage() {
+		return profileImage;
+	}
+
+	public void setProfileImage(String profileImage) {
+		this.profileImage = profileImage;
+	}
+
+	@Override
+	public String toString() {
+		return "Contact{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", secondName='" + secondName + '\'' +
+				", work='" + work + '\'' +
+				", email='" + email + '\'' +
+				", image='" + image + '\'' +
+				", description='" + description + '\'' +
+				", phone='" + phone + '\'' +
+				", profileImage='" + profileImage + '\'' +
+				", user=" + user +
+				'}';
+	}
 }
